@@ -16,3 +16,14 @@ body {
 #task-label {
     margin-left: 20px;
 }
+
+.task-table {
+    margin: 20px;
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid white;
+    padding: 10px 100px;
+}
