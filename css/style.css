@@ -19,11 +19,24 @@ body {
 
 .task-table {
     margin: 20px;
-    border: 1px solid white;
+    border: 2px solid white;
     border-collapse: collapse;
 }
 
 th {
-    border: 1px solid white;
+    border: 2px solid white;
     padding: 10px 100px;
+    background-color: #f1f0f0;
+}
+
+td {
+    border: 1px solid white;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f0f0;
+}
+
+tr:nth-child(odd) {
+    background-color: #d1e5ec;
 }
