@@ -14,7 +14,7 @@ const addInputToTable = () => {
             let input = inputField.value;
             inputField.value = '';
             let newRow = createTableRow();
-            addCellsToTableRow(newRow, input);
+            createFieldsForRow(newRow, input);
         }
     });
 }
@@ -28,7 +28,7 @@ const createTableRow = () => {
     return newTableRow;
 }
 
-const addCellsToTableRow = (tableRow, input) => {
+const createFieldsForRow = (tableRow, input) => {
     createTaskField(tableRow, input);
     createEditField(tableRow);
     createDeleteField(tableRow);
@@ -46,6 +46,15 @@ const createDeleteField = (tableRow) => {
     deleteIcon.src = '../img/delete.png';
     deleteIcon.classList.add('delete');
     deleteCell.appendChild(deleteIcon);
+
+    deleteIcon.addEventListener('click', () => {
+        // suche nach dem übergeordneten tr-Element
+        let row = deleteIcon.closest('tr');
+        // überprüfe, ob row eine gültige Zeile ist
+        if(row) {
+            row.remove();
+        }
+    })
 }
 
 const createEditField = (tableRow) => {
@@ -54,4 +63,8 @@ const createEditField = (tableRow) => {
     editIcon.src = '../img/edit.png';
     editIcon.classList.add('edit');
     editCell.appendChild(editIcon);
+}
+
+const editTask = (tableRow) => {
+
 }
